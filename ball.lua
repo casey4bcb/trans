@@ -34,14 +34,12 @@ local ball = {
             self.v.x = -self.v.x
         end
 
-        --local prevBottom = self.p0.x - (self.height / 2)
-        -- ??? Ugh, draw the fucking thing
-        --local hitPaddleY = (prevBottom < paddle:top()) and
-        --   (self:bottom() > paddle:top())
-        local hitPaddleX = ((self:right() > paddle:left()) or
-            (self:left() < paddle:right())) and
-            (self:bottom() > paddle:top())
-
+        local prevBottom = self.p0.y + (self.height / 2)
+        local hitPaddleY = (prevBottom < paddle:top()) and
+          (self:bottom() > paddle:top())
+        local hitPaddleX =
+            (self:left() > paddle:left() and self:left() < paddle:right()) or
+            (self:right() > paddle:left() and self:right() < paddle:right())
         if hitPaddleY and hitPaddleX then
             self.p.y = paddle:top() - (self.height / 2)
             self.v.y = -self.v.y

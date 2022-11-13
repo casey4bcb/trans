@@ -1,6 +1,6 @@
 local screen = {
-	width = 360,
-	height = 640,
+	width = 720,
+	height = 1280,
 
 	left = function(self)
 		return 0
