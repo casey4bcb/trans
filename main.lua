@@ -18,7 +18,6 @@ function love.load()
     reset()
 end
 
-
 function love.update(dt)
     ball:update(dt, screen, paddle)
     paddle:update(dt, screen)
@@ -26,7 +25,6 @@ function love.update(dt)
         reset()
     end
 end
-
 
 function love.draw()
     love.graphics.setColor(1, 1, 1)
